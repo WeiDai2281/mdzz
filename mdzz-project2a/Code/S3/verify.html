@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="User">
+  <head th:fragment="common-header">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Le's Bookstore</title>
+    <!-- Bootstrap core CSS-->
+    <link href="stylesheets/bootstrap.min.css" rel="stylesheet">
+    <link href="stylesheets/non-responsive.css" rel="stylesheet">
+    <!-- Custom styles for this template-->
+    <link href="stylesheets/style.css" rel="stylesheet">
+    <link rel="icon" href="images/applie-touch-icon.png">
+  </head>
+</html>
+<body>
+  <div th:fragment="navbar">
+    <div style="width: 100%; height: 20px; background-color: #f46b42" class="page-top"></div>
+    <!-- Static navbar-->
+    <nav class="navbar navbar-default navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header"><a href="#" class="navbar-brand">*aaS mdzz</a></div>
+        <div id="navbar">
+          <ul class="nav navbar-nav navbar-left">
+            <li class="dropdown"><a href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle">ITEMS<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="store.html">Browse the ITEMS</a></li>
+                <li><a href="#">Store hours & Directions</a></li>
+                <li><a href="#">FAQ</a></li>
+              </ul>
+            </li>
+            <form class="navbar-form">
+              <div class="form-group">
+                <input type="text" name="keyword" placeholder="Book title" class="form-control">
+              </div>
+              <button type="submit" class="btn btn-default">Search</button>
+            </form>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#">SHOPPING CART</a></li>
+            <li><a href="#">MY ACCOUNT</a></li>
+            <li><a href="#">LOGOUT</a></li>
+          </ul>
+        </div>
+        <!-- /.nav-collapse-->
+      </div>
+      <!-- /.container-fluid-->
+    </nav>
+  </div>
+  <div ng-controller="VerifyCtrl" class="container">
+    <div ng-init="verify()">{{ vfy_message }} </div>
+  </div>
+  <!-- end of container-->
+  <div th:fragment="body-bottom-scripts">
+    <script src="javascripts/jquery.min.js"></script>
+    <script src="javascripts/bootstrap.min.js"></script>
+    <script src="javascripts/angular.js"></script>
+    <script src="javascripts/user.js"></script>
+  </div>
+</body>

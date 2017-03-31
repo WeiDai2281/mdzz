@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="Profile">
+<head th:fragment="common-header">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Le's Bookstore</title>
+    <!-- Bootstrap core CSS-->
+    <link href="stylesheets/bootstrap.min.css" rel="stylesheet">
+    <link href="stylesheets/non-responsive.css" rel="stylesheet">
+    <!-- Custom styles for this template-->
+    <link href="stylesheets/style.css" rel="stylesheet">
+    <link rel="icon" href="images/applie-touch-icon.png">
+</head>
+<body>
+<div th:fragment="navbar">
+    <div class="page-top" style="width: 100%; height: 20px; background-color: #f46b42"></div>
+    <!-- Static navbar-->
+    <nav class="navbar navbar-default navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header"><a class="navbar-brand" href="#">*aaS mdzz</a></div>
+            <div id="navbar">
+                <ul class="nav navbar-nav navbar-left">
+                    <li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">ITEMS<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="store.html">Browse the ITEMS</a></li>
+                            <li><a href="#">FAQ</a></li>
+                        </ul>
+                    </li>
+                    <form class="navbar-form">
+                        <div class="form-group">
+                            <input class="form-control" type="text" name="keyword" placeholder="Book title">
+                        </div>
+                        <button class="btn btn-default" type="submit">Search</button>
+                    </form>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#">SHOPPING CART</a></li>
+                    <li><a href="#">MY ACCOUNT</a></li>
+                    <li><a href="#">LOGOUT</a></li>
+                </ul>
+            </div>
+            <!-- /.nav-collapse-->
+        </div>
+        <!-- /.container-fluid-->
+    </nav>
+</div>
+<div class="container">
+    <div class="row" style="margin-bottom: -100px">
+        <div class="col-xs-8">
+            <h2 class="section-headline"><span>User Profile</span></h2>
+        </div>
+        <div class="col-xs-4"><img class="img-responsive" src="images/logo.png"></div>
+    </div>
+    <hr style="position: absolute; width: 100%; height: 6px; background-color: #333; z-index: -1; margin-top: -80px"><img class="img-responsive" src="images/wood.png" style="margin-top: -75px">
+
+    <!-- main -->
+    <div class="row" style="margin-top: 60px">
+        <div class="col-xs-2">
+            <!-- Left -->
+            <ul class="nav">
+                <li><a href="#"> <span style="color: red">Change Profile</a></li>
+                <li><a href="#"> <span style="color: red">Account Settings</a></li>
+                <li><a href="#"> <span style="color: red">Log out</a></li>
+            </ul>
+        </div><!-- /span-3 -->
+        <div class="col-xs-10" ng-controller="ProfileCtrl">
+            <!-- Right -->
+            <div class="row">
+                <div class="col-xs-6">
+                    <div class="panel panel-default">
+                        <div class="panel-heading"><span style="color: red">User Info</div>
+                        <table class="table"  ng-model="user_info">
+                            <tbody>
+                            <tr ng-repeat="(key, val) in user_info">
+                                <td><span style="color: red">{{key}}</td>
+                                <td>{{val}} </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <p style="color: red">{{  error_message }} </p>
+                    </div><!--/panel-->
+                </div>
+                <div class="col-xs-6" ng-controller="AccountCtrl">
+                    <div class="panel panel-default">
+                        <div class="panel-heading"><span style="color: red">Account Info</div>
+                        <table class="table"  ng-model="account_info">
+                            <tbody>
+                            <tr ng-repeat="(key, val) in account_info">
+                                <td><span style="color: red">{{key}}</td>
+                                <td>{{val}} </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <p style="color: red">{{  error_message }} </p>
+                    </div>
+                </div><!--/col-span-6-->
+
+            </div><!--/row-->
+        </div><!--/col-span-9-->
+    </div>
+    <!-- main -->
+
+
+</div>
+</div>
+<!-- end of container-->
+<div th:fragment="body-bottom-scripts">
+    <script src="javascripts/jquery.min.js"></script>
+    <script src="javascripts/bootstrap.min.js"></script>
+    <script src="javascripts/angular.js"></script>
+    <script src="javascripts/profile.js"></script>
+</div>
+</body>
+</html>
